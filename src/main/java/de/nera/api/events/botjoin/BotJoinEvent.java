@@ -1,13 +1,13 @@
-package de.nera.api.event;
+package de.nera.api.events.botjoin;
 
 import net.dv8tion.jda.api.entities.Member;
 
 import java.util.EventObject;
 
-public class GenericJoinEvent extends EventObject {
+public class BotJoinEvent extends EventObject {
     private final Member member;
 
-    public GenericJoinEvent(Object source, Member member) {
+    public BotJoinEvent(Object source, Member member) {
         super(source);
         this.member = member;
     }
