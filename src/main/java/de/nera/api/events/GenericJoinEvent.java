@@ -1,13 +1,13 @@
-package de.nera.api.events.userjoin;
+package de.nera.api.events;
 
 import net.dv8tion.jda.api.entities.Member;
 
 import java.util.EventObject;
 
-public class UserJoinEvent extends EventObject {
+public class GenericJoinEvent extends EventObject {
     private final Member member;
 
-    public UserJoinEvent(Object source, Member member) {
+    public GenericJoinEvent(Object source, Member member) {
         super(source);
         this.member = member;
     }

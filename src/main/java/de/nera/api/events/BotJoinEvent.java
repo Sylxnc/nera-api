@@ -1,4 +1,5 @@
-package de.nera.api.events.botjoin;
+package de.nera.api.events;
+
 
 import net.dv8tion.jda.api.entities.Member;
 
