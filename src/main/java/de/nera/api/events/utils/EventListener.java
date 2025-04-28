@@ -4,7 +4,7 @@ import de.nera.api.events.BotJoinEvent;
 import de.nera.api.events.GenericJoinEvent;
 import de.nera.api.events.UserJoinEvent;
 
-public interface Listener {
+public interface EventListener {
 
     default void onGenericJoin(GenericJoinEvent event){
 
