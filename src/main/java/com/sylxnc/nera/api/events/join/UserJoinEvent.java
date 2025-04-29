@@ -1,6 +1,6 @@
 package com.sylxnc.nera.api.events.join;
 
-import com.sylxnc.nera.api.secured.SecuredMember;
+
 import net.dv8tion.jda.api.entities.Member;
 
 import java.util.EventObject;
