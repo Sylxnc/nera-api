@@ -1,4 +1,4 @@
-package de.nera.api.command;
+package com.sylxnc.nera.api.command;
 
 public interface Command {
     String getName();

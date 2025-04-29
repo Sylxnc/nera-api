@@ -1,8 +1,8 @@
-package de.nera.api.events.utils;
+package com.sylxnc.nera.api.events;
 
-import de.nera.api.events.BotJoinEvent;
-import de.nera.api.events.GenericJoinEvent;
-import de.nera.api.events.UserJoinEvent;
+import com.sylxnc.nera.api.events.join.BotJoinEvent;
+import com.sylxnc.nera.api.events.join.GenericJoinEvent;
+import com.sylxnc.nera.api.events.join.UserJoinEvent;
 
 public interface EventListener {
 

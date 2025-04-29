@@ -1,4 +1,4 @@
-package de.nera.api.module;
+package com.sylxnc.nera.api.module;
 
 
 public interface Module {

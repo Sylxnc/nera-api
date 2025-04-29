@@ -1,4 +1,4 @@
-package de.nera.api.command.slash;
+package com.sylxnc.nera.api.command.slash;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
