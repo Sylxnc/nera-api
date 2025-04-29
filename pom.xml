@@ -8,36 +8,39 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/sylxnc/nera-api</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>5.4.0</version> <!-- replace $version with the latest version -->
-            <!-- Optionally disable audio natives to reduce jar size by excluding `opus-java` and `tink` -->
-            <exclusions>
-                <!-- required for encoding audio into opus, not needed if audio is already provided in opus encoding
-                <exclusion>
-                    <groupId>club.minnced</groupId>
-                    <artifactId>opus-java</artifactId>
-                </exclusion> -->
-                <!-- required for encrypting and decrypting audio
-                <exclusion>
-                    <groupId>com.google.crypto.tink</groupId>
-                    <artifactId>tink</artifactId>
-                </exclusion> -->
-            </exclusions>
+            <version>5.4.0</version>
         </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.38</version>
-                <scope>provided</scope>
-            </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.11.0</version> <!-- oder neueste Version -->
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
