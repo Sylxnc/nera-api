@@ -1,16 +1,16 @@
-package com.sylxnc.nera.api.config;
-
+package com.sylxnc.nera.api.data.services;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.Getter;
 import net.dv8tion.jda.api.entities.Guild;
 import org.bson.Document;
 
-public class Config {
+public class ConfigService {
 
     private MongoClient mongo;
     private MongoDatabase db;
@@ -19,8 +19,9 @@ public class Config {
     private Document config;
     private String name;
 
-    public Config(Guild guild, String name) {
-        mongo = MongoClients.create(new ConnectionString("mongodb://localhost:27017/"));
+    public ConfigService(Guild guild, String name) {
+        Dotenv dotenv = Dotenv.load();
+        mongo = MongoClients.create(new ConnectionString(dotenv.get("MONGO_URI")));
         db = mongo.getDatabase("ServerConfigs");
         this.name = name;
         collection = db.getCollection(guild.getId());
@@ -33,7 +34,11 @@ public class Config {
     }
 
     public void set(String key, Object value) {
-        config.put(key, value);
+        if(config.containsKey(key)) {
+            config.replace(key, value);
+        }else {
+            config.append(key, value);
+        }
     }
 
     public void save() {

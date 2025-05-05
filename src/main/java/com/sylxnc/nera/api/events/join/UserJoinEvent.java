@@ -1,20 +1,11 @@
 package com.sylxnc.nera.api.events.join;
 
 
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 
-import java.util.EventObject;
-
-public class UserJoinEvent extends EventObject {
-    private final Member member;
-
-    public UserJoinEvent(Object source, Member member) {
-
-
-        super(source);
-        this.member = member;
-    }
-    public Member getMember() {
-        return member;
+public class UserJoinEvent extends GenericJoinEvent {
+    public UserJoinEvent(Object source, Member member, Guild guild) {
+        super(source, member, guild);
     }
 }
